@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>College Employees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Location</th>
+      <th>Phone no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @college_employees.each do |college_employee| %>
+      <tr>
+        <td><%= college_employee.name %></td>
+        <td><%= college_employee.company %></td>
+        <td><%= college_employee.location %></td>
+        <td><%= college_employee.phone_no %></td>
+        <td><%= link_to 'Show', college_employee %></td>
+        <td><%= link_to 'Edit', edit_college_employee_path(college_employee) %></td>
+        <td><%= link_to 'Destroy', college_employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New College Employee', new_college_employee_path %>

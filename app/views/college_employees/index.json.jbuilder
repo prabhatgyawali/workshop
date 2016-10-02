@@ -1,0 +1,1 @@
+json.array! @college_employees, partial: 'college_employees/college_employee', as: :college_employee
